@@ -26,7 +26,7 @@ SEMANTIC_THRESHOLD = 0.85
 # --- Search ---
 BM25_TOP_K = 20
 DENSE_TOP_K = 20
-HYBRID_TOP_K = 20
+HYBRID_TOP_K = 10  # số ứng viên đưa vào rerank (20 → 10 để giảm latency rerank ~2.4x)
 RERANK_TOP_K = 3
 
 # --- Paths ---

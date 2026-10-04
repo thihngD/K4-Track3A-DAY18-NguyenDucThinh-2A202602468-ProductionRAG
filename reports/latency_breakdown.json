@@ -1,0 +1,30 @@
+{
+  "build_ms": {
+    "chunking": 433.7,
+    "enrichment": 51057.5,
+    "indexing": 94207.1,
+    "reranker_load": 11268.9
+  },
+  "query_ms": {
+    "search": {
+      "avg_ms": 346.9,
+      "p95_ms": 435.9,
+      "max_ms": 444.9
+    },
+    "rerank": {
+      "avg_ms": 6154.1,
+      "p95_ms": 6877.5,
+      "max_ms": 9003.6
+    },
+    "generate": {
+      "avg_ms": 1499.0,
+      "p95_ms": 1987.8,
+      "max_ms": 2254.1
+    },
+    "total": {
+      "avg_ms": 8000.0,
+      "p95_ms": 8962.2,
+      "max_ms": 10531.1
+    }
+  }
+}

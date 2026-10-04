@@ -1,0 +1,80 @@
+{
+  "aggregate": {
+    "faithfulness": 0.8594696969696969,
+    "answer_relevancy": 0.7901439396996862,
+    "context_precision": 0.924999999925,
+    "context_recall": 0.95
+  },
+  "num_questions": 20,
+  "failures": [
+    {
+      "question": "Một nhân viên Senior có 9 năm thâm niên được nghỉ bao nhiêu ngày phép năm và lương trong khoảng nào?",
+      "answer": "Nhân viên Senior có 9 năm thâm niên sẽ được nghỉ **18 ngày phép năm** (15 ngày cơ bản + 3 ngày cộng thêm cho 9 năm thâm niên). Lương của nhân viên này sẽ được tính theo chính sách nghỉ phép năm có lương, nhưng thông tin cụ thể về mức lương không có trong context.",
+      "ground_truth": "Theo chính sách v2024: 15 ngày cơ bản + 3 ngày thâm niên (9÷3=3) = 18 ngày phép. Lương Senior (P3-P4): 20-35 triệu VNĐ/tháng.",
+      "contexts": [
+        "# Chính sách nghỉ phép năm (Phiên bản 2024)\n> Phiên bản: 2.0 | Ngày hiệu lực: 01/01/2024 | Phòng ban: Nhân sự\n\n## Số ngày phép năm\nMỗi nhân viên chính thức được hưởng **15 ngày phép năm** có lương, tăng từ 12 ngày so với chính sách năm 2023. Chính sách này thay thế hoàn toàn phiên bản 1.0 ban hành ngày 01/01/2023.\n\n## Thâm niên công tác\nNhân viên có thâm niên từ **3 năm trở lên** được cộng thêm **1 ngày phép** cho mỗi 3 năm làm việc liên tục. Ví dụ: nhân viên 9 năm thâm niên được 18 ngày phép (15 + 3).\n\n## Quy định sử dụng\nPhép năm phải được đăng ký trước ít nhất 2 ngày làm việc qua hệ thống HR Portal. Nghỉ phép từ 5 ngày trở lên cần được trưởng phòng phê duyệt. Phép năm không sử dụng hết có thể chuyển tối đa 5 ngày sang năm sau, hết hạn vào 31/03 năm kế tiếp. Nhân viên cũng có thể yêu cầu thanh toán bằng tiền cho số ngày phép còn lại.",
+        "# Chính sách nghỉ phép năm (Phiên bản 2023)\n> Phiên bản: 1.0 | Ngày hiệu lực: 01/01/2023 | Phòng ban: Nhân sự\n\n## Số ngày phép năm\nMỗi nhân viên chính thức được hưởng **12 ngày phép năm** có lương. Số ngày phép được tính theo năm dương lịch từ 01/01 đến 31/12. Nhân viên vào công ty giữa năm sẽ được tính pro-rata theo số tháng làm việc thực tế.\n\n## Thâm niên công tác\nNhân viên có thâm niên từ **5 năm trở lên** được cộng thêm **1 ngày phép** cho mỗi 5 năm làm việc liên tục. Ví dụ: nhân viên 10 năm thâm niên được 14 ngày phép.\n\n## Quy định sử dụng\nPhép năm phải được đăng ký trước ít nhất 3 ngày làm việc qua hệ thống HR Portal. Nghỉ phép từ 3 ngày trở lên cần được trưởng phòng phê duyệt. Phép năm không sử dụng hết có thể chuyển tối đa 5 ngày sang năm sau, hết hạn vào 31/03 năm kế tiếp."
+      ],
+      "avg_score": 0.5625,
+      "worst_metric": "answer_relevancy",
+      "score": 0.0,
+      "diagnosis": "Answer doesn't match question",
+      "suggested_fix": "Viết lại prompt để trả lời trực tiếp hơn"
+    },
+    {
+      "question": "Nhân viên tạm ứng 15 triệu, sau 20 ngày mới thanh toán. Bị phạt bao nhiêu?",
+      "answer": "Nhân viên tạm ứng 15 triệu và sau 20 ngày mới thanh toán. Thời hạn thanh toán là 15 ngày, nên nhân viên sẽ bị phạt 2%/tháng trên số tiền chưa hoàn ứng. \n\nSố tiền chưa hoàn ứng là 15 triệu VNĐ. \n\nPhí phạt sẽ được tính như sau:\n- 2% của 15.000.000 VNĐ = 300.000 VNĐ.\n\nVì nhân viên đã trễ 5 ngày (20 ngày - 15 ngày), nên sẽ tính phí phạt cho 1 tháng (do phí phạt tính theo tháng). \n\nTổng số tiền phạt là 300.000 VNĐ.",
+      "ground_truth": "Thời hạn thanh toán là 15 ngày. Quá hạn 5 ngày, bị tính phí 2%/tháng trên 15.000.000 VNĐ = 300.000 VNĐ/tháng (tính pro-rata khoảng 50.000 VNĐ cho 5 ngày).",
+      "contexts": [
+        "# Chính sách tạm ứng\n> Phiên bản: 1.0 | Ngày hiệu lực: 01/01/2024 | Phòng ban: Tài chính\n\n## Hạn mức tạm ứng\nNhân viên có thể tạm ứng tối đa **20.000.000 VNĐ** cho mỗi lần đề xuất. Tạm ứng phải ghi rõ mục đích: công tác, mua sắm, tổ chức sự kiện hoặc chi phí dự án.\n\n## Thời hạn thanh toán\nKhoản tạm ứng phải được thanh toán (nộp chứng từ hoàn ứng) trong vòng **15 ngày** kể từ ngày nhận tiền. Trường hợp công tác dài ngày, thời hạn tính từ ngày kết thúc chuyến công tác.\n\n## Phạt quá hạn\nKhoản tạm ứng chưa thanh toán sau 15 ngày sẽ bị tính phí **2%/tháng** trên số tiền chưa hoàn ứng. Phí này được khấu trừ vào lương tháng kế tiếp. Nhân viên có khoản tạm ứng chưa thanh toán sẽ không được phê duyệt tạm ứng mới.\n\n## Phê duyệt\nTạm ứng dưới 5.000.000 VNĐ: trưởng phòng phê duyệt. Từ 5.000.000 VNĐ trở lên: cần thêm phê duyệt Kế toán trưởng."
+      ],
+      "avg_score": 0.7658,
+      "worst_metric": "faithfulness",
+      "score": 0.2727,
+      "diagnosis": "LLM hallucinating",
+      "suggested_fix": "Thắt chặt system prompt, giảm temperature về 0"
+    },
+    {
+      "question": "Thâm niên bao nhiêu năm thì được cộng thêm ngày phép?",
+      "answer": "Theo chính sách nghỉ phép năm (Phiên bản 2023), nhân viên có thâm niên từ 5 năm trở lên được cộng thêm 1 ngày phép cho mỗi 5 năm làm việc liên tục. Theo chính sách nghỉ phép năm (Phiên bản 2024), nhân viên có thâm niên từ 3 năm trở lên được cộng thêm 1 ngày phép cho mỗi 3 năm làm việc liên tục.",
+      "ground_truth": "Theo chính sách v2024 hiện hành, nhân viên có thâm niên từ 3 năm trở lên được cộng thêm 1 ngày phép cho mỗi 3 năm. Chính sách cũ v2023 yêu cầu 5 năm.",
+      "contexts": [
+        "# Chính sách nghỉ phép năm (Phiên bản 2023)\n> Phiên bản: 1.0 | Ngày hiệu lực: 01/01/2023 | Phòng ban: Nhân sự\n\n## Số ngày phép năm\nMỗi nhân viên chính thức được hưởng **12 ngày phép năm** có lương. Số ngày phép được tính theo năm dương lịch từ 01/01 đến 31/12. Nhân viên vào công ty giữa năm sẽ được tính pro-rata theo số tháng làm việc thực tế.\n\n## Thâm niên công tác\nNhân viên có thâm niên từ **5 năm trở lên** được cộng thêm **1 ngày phép** cho mỗi 5 năm làm việc liên tục. Ví dụ: nhân viên 10 năm thâm niên được 14 ngày phép.\n\n## Quy định sử dụng\nPhép năm phải được đăng ký trước ít nhất 3 ngày làm việc qua hệ thống HR Portal. Nghỉ phép từ 3 ngày trở lên cần được trưởng phòng phê duyệt. Phép năm không sử dụng hết có thể chuyển tối đa 5 ngày sang năm sau, hết hạn vào 31/03 năm kế tiếp.",
+        "# Chính sách nghỉ phép năm (Phiên bản 2024)\n> Phiên bản: 2.0 | Ngày hiệu lực: 01/01/2024 | Phòng ban: Nhân sự\n\n## Số ngày phép năm\nMỗi nhân viên chính thức được hưởng **15 ngày phép năm** có lương, tăng từ 12 ngày so với chính sách năm 2023. Chính sách này thay thế hoàn toàn phiên bản 1.0 ban hành ngày 01/01/2023.\n\n## Thâm niên công tác\nNhân viên có thâm niên từ **3 năm trở lên** được cộng thêm **1 ngày phép** cho mỗi 3 năm làm việc liên tục. Ví dụ: nhân viên 9 năm thâm niên được 18 ngày phép (15 + 3).\n\n## Quy định sử dụng\nPhép năm phải được đăng ký trước ít nhất 2 ngày làm việc qua hệ thống HR Portal. Nghỉ phép từ 5 ngày trở lên cần được trưởng phòng phê duyệt. Phép năm không sử dụng hết có thể chuyển tối đa 5 ngày sang năm sau, hết hạn vào 31/03 năm kế tiếp. Nhân viên cũng có thể yêu cầu thanh toán bằng tiền cho số ngày phép còn lại."
+      ],
+      "avg_score": 0.8148,
+      "worst_metric": "context_precision",
+      "score": 0.5,
+      "diagnosis": "Too many irrelevant chunks",
+      "suggested_fix": "Thêm reranking (cross-encoder) hoặc lọc metadata"
+    },
+    {
+      "question": "Nhân viên được tài trợ khóa học 25 triệu, nghỉ việc sau 8 tháng hoàn thành khóa học. Phải hoàn trả bao nhiêu?",
+      "answer": "Nhân viên phải hoàn trả **100% chi phí** đào tạo đã được tài trợ, tức là **25 triệu VNĐ**.",
+      "ground_truth": "Nhân viên phải cam kết làm việc ít nhất 1 năm sau khi hoàn thành khóa học. Nghỉ sau 8 tháng là trước hạn cam kết, phải hoàn trả 100% chi phí tức 25.000.000 VNĐ.",
+      "contexts": [
+        "# Chính sách hoàn chi đào tạo\n> Phiên bản: 1.1 | Ngày hiệu lực: 01/07/2023 | Phòng ban: Nhân sự & Tài chính\n\n## Điều kiện được tài trợ\nCông ty chi trả chi phí đào tạo bên ngoài (chứng chỉ, khóa học dài hạn, hội thảo) cho nhân viên có **thâm niên từ 1 năm trở lên**. Chi phí được tài trợ tối đa **30.000.000 VNĐ/khóa** và cần phê duyệt của Giám đốc phòng ban.\n\n## Cam kết hoàn chi\nNhân viên được tài trợ đào tạo phải **cam kết làm việc tại công ty ít nhất 1 năm** sau khi hoàn thành khóa học. Nếu nghỉ việc trước thời hạn cam kết, nhân viên phải hoàn trả **100% chi phí** đào tạo đã được tài trợ.\n\n## Quy trình\n1. Nộp đơn đề xuất đào tạo kèm chương trình chi tiết\n2. Trưởng phòng đánh giá mức độ liên quan đến công việc\n3. Phòng Nhân sự xem xét ngân sách\n4. Ký cam kết hoàn chi trước khi đăng ký khóa học",
+        "# Chính sách đào tạo nội bộ\n> Phiên bản: 1.3 | Ngày hiệu lực: 01/01/2024 | Phòng ban: Nhân sự & Đào tạo\n\n## Yêu cầu đào tạo\nMỗi phòng ban phải tổ chức tối thiểu **2 buổi đào tạo/quý** về chuyên môn hoặc kỹ năng mềm. Nhân viên mới (trong 6 tháng đầu) **bắt buộc** tham gia tất cả các buổi đào tạo của phòng ban.\n\n## Ngân sách đào tạo\nCông ty dành ngân sách đào tạo **5.000.000 VNĐ/người/năm** cho các khóa học bên ngoài. Nhân viên có thể đăng ký khóa học qua hệ thống Learning Portal và cần phê duyệt của trưởng phòng.\n\n## Đánh giá hiệu quả\nSau mỗi khóa đào tạo, nhân viên cần hoàn thành bài đánh giá và khảo sát phản hồi. Phòng Đào tạo tổng hợp kết quả hàng quý để cải thiện chương trình đào tạo."
+      ],
+      "avg_score": 0.8249,
+      "worst_metric": "faithfulness",
+      "score": 0.5,
+      "diagnosis": "LLM hallucinating",
+      "suggested_fix": "Thắt chặt system prompt, giảm temperature về 0"
+    },
+    {
+      "question": "Bao lâu phải đổi mật khẩu một lần?",
+      "answer": "Mật khẩu phải được thay đổi **mỗi 120 ngày**.",
+      "ground_truth": "Theo chính sách hiện hành (v2.0), mật khẩu phải được thay đổi mỗi 120 ngày. Chính sách cũ yêu cầu 90 ngày nhưng đã bị thay thế.",
+      "contexts": [
+        "# Chính sách mật khẩu (Phiên bản cũ)\n> Phiên bản: 1.0 | Ngày hiệu lực: 01/01/2022 | Phòng ban: CNTT | Trạng thái: ĐÃ THAY THẾ bởi v2.0\n\n## Yêu cầu mật khẩu\nMật khẩu phải có tối thiểu **8 ký tự**, bao gồm ít nhất 1 chữ hoa, 1 chữ thường và 1 số. Không được sử dụng tên đăng nhập hoặc các thông tin cá nhân dễ đoán làm mật khẩu.\n\n## Chu kỳ thay đổi\nMật khẩu phải được thay đổi **mỗi 90 ngày**. Hệ thống sẽ tự động nhắc nhở trước 7 ngày. Mật khẩu mới không được trùng với 3 mật khẩu gần nhất.\n\n## Lưu ý\nChính sách này đã được thay thế bởi Chính sách mật khẩu v2.0 từ ngày 01/07/2024. Vui lòng tham khảo phiên bản mới để biết quy định hiện hành.",
+        "# Chính sách mật khẩu (Phiên bản hiện hành)\n> Phiên bản: 2.0 | Ngày hiệu lực: 01/07/2024 | Phòng ban: CNTT\n\n## Yêu cầu mật khẩu\nMật khẩu phải có tối thiểu **12 ký tự**, bao gồm ít nhất 1 chữ hoa, 1 chữ thường, 1 số và 1 ký tự đặc biệt (!@#$%^&*). Khuyến khích sử dụng passphrase dài hơn 16 ký tự.\n\n## Xác thực đa yếu tố (MFA)\nTất cả nhân viên **bắt buộc** kích hoạt MFA cho tài khoản email, VPN và các hệ thống nội bộ. Phương thức MFA được chấp nhận: ứng dụng Authenticator (ưu tiên), SMS OTP, hoặc YubiKey.\n\n## Chu kỳ thay đổi\nMật khẩu phải được thay đổi **mỗi 120 ngày**. Hệ thống tự động nhắc nhở trước 14 ngày. Mật khẩu mới không được trùng với 5 mật khẩu gần nhất. Tài khoản bị khóa sau 5 lần nhập sai liên tiếp.\n\n## Chính sách thay thế\nVăn bản này thay thế Chính sách mật khẩu v1.0 ban hành ngày 01/01/2022."
+      ],
+      "avg_score": 0.83,
+      "worst_metric": "context_precision",
+      "score": 0.5,
+      "diagnosis": "Too many irrelevant chunks",
+      "suggested_fix": "Thêm reranking (cross-encoder) hoặc lọc metadata"
+    }
+  ]
+}
